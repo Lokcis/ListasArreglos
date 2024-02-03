@@ -6,18 +6,10 @@ package Mundo;
  */
 public class Methods {
 
-    /*public int add(int pos, String ele) {
-        
-        
-        
+    public void add(int pos, String ele, String[] array) {
 
-    }*/
-    public String[] addArray(int size, String name) {
-
-        int[] arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr[i] = i + 1;
-        }
+        array[pos] = ele;
 
     }
+
 }
