@@ -17,6 +17,8 @@ public class Main {
         Methods methods = new Methods();
 
         int opc, fin = 0, tam, pos;
+        boolean validPosition = false;
+
         String data;
         String[] mainArray, arrayOfArrays;
 
@@ -66,20 +68,23 @@ public class Main {
 
                     data = in.next();
 
-                    System.out.println("Ingrese la posicion: ");
+                    do {
+                        System.out.println("Ingrese la posicion: ");
 
-                    pos = in.nextInt();
+                        pos = in.nextInt();
+
+                        try {
+                            methods.add(pos, data, mainArray);
+                            validPosition = true;
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
+                        }
+                    } while (!validPosition);
 
                     System.out.println("El arreglo es el siguiente: ");
 
-                    try {
-                        methods.add(pos, data, mainArray);
-                        System.out.println("El arreglo es el siguiente: ");
-                        for (int i = 0; i < mainArray.length; i++) {
-                            System.out.println(mainArray[i]);
-                        }
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
+                    for (int i = 0; i < mainArray.length; i++) {
+                        System.out.println(mainArray[i]);
                     }
 
                 }
