@@ -13,7 +13,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         Methods methods = new Methods();
 
         int opc, fin = 0, tam, pos;
@@ -29,7 +29,7 @@ public class Main {
         tam = in.nextInt();
 
         mainArray = new String[tam];
-        
+
         do {
             System.out.println("""  
                            
@@ -57,25 +57,29 @@ public class Main {
                            """);
 
             opc = in.nextInt();
-            
+
             switch (opc) {
 
                 case 1 -> {
-                    
+
                     System.out.println("Ingrese el elemento: ");
-                    
+
                     data = in.next();
-                    
+
                     System.out.println("Ingrese la posicion: ");
-                    
+
                     pos = in.nextInt();
-                    
-                    methods.add(pos, data, mainArray);
-                    
-                    for (int i = 0; i < mainArray.length; i++) {
-                        
-                        System.out.println(mainArray[i]);
-                        
+
+                    System.out.println("El arreglo es el siguiente: ");
+
+                    try {
+                        methods.add(pos, data, mainArray);
+                        System.out.println("El arreglo es el siguiente: ");
+                        for (int i = 0; i < mainArray.length; i++) {
+                            System.out.println(mainArray[i]);
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
                     }
 
                 }
@@ -87,13 +91,13 @@ public class Main {
                 case 17 -> {
 
                     fin = 1;
-                    
+
                 }
 
                 default -> {
-                    
+
                     System.out.println("Opción incorrecta.");
-                    
+
                 }
             }
 
