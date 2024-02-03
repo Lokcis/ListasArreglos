@@ -9,21 +9,22 @@ public class Methods {
     public void add(int pos, String ele, String[] array) throws Exception {
 
         if (pos >= 0 && pos < array.length) {
-            array[pos] = ele;
+
+            for (int i = 0; i < array.length; i++) {
+
+                if (array[i] == null) {
+
+                    array[i] = ele;
+                    
+                    break;
+        
+                }
+
+            }
         } else {
             throw new Exception("La posición ingresada es inválida. Por favor, ingresa una posición entre 0 y " + (array.length - 1));
         }
 
-    }
-    
-    public void searchLastItem(String[] array){
-        
-        if (array[array.length] != null){
-            
-            //Poner throw de arreglo lleno.
-            
-        } 
-        
     }
 
 }
