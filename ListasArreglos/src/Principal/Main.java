@@ -69,6 +69,7 @@ public class Main {
                     data = in.next();
 
                     do {
+                        validPosition = false;
                         System.out.println("Ingrese la posicion: ");
 
                         pos = in.nextInt();
