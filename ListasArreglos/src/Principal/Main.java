@@ -1,5 +1,6 @@
 package Principal;
 
+import Mundo.*;
 import java.util.Scanner;
 
 /**
@@ -12,8 +13,11 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Methods methods = new Methods();
 
-        int opc, fin = 0, tam;
+        int opc, fin = 0, tam, pos;
+        String data;
         String[] mainArray, arrayOfArrays;
 
         Scanner in = new Scanner(System.in);
@@ -25,9 +29,10 @@ public class Main {
         tam = in.nextInt();
 
         mainArray = new String[tam];
-
+        
         do {
-            System.out.println("""                           
+            System.out.println("""  
+                           
                            Ingresa la accion que deseas realizar:
                            
                            1. Agregar un elemento en una posicion especifica.
@@ -48,6 +53,7 @@ public class Main {
                            16. Verificar si el elemento se encuentra en el arreglo.
                             
                            17. Salir.
+                           
                            """);
 
             opc = in.nextInt();
@@ -55,6 +61,18 @@ public class Main {
             switch (opc) {
 
                 case 1 -> {
+                    
+                    System.out.println("Ingrese el elemento: ");
+                    
+                    data = in.next();
+                    
+                    System.out.println("Ingrese la posicion: ");
+                    
+                    pos = in.nextInt();
+                    
+                    methods.add(pos, data, mainArray);
+                    
+                    System.out.println(mainArray);
 
                 }
 
