@@ -72,7 +72,11 @@ public class Main {
                     
                     methods.add(pos, data, mainArray);
                     
-                    System.out.println(mainArray);
+                    for (int i = 0; i < mainArray.length; i++) {
+                        
+                        System.out.println(mainArray[i]);
+                        
+                    }
 
                 }
 
