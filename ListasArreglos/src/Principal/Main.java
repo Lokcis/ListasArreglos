@@ -60,7 +60,7 @@ public class Main {
         switch (opc) {
 
             case 1 -> {
-
+                System.out.println("PENE");
             }
 
         }
