@@ -16,7 +16,7 @@ public class Main {
 
         Methods methods = new Methods();
 
-        int opc, fin = 0, tam, pos;
+        int opc, fin = 0, tam, pos, count = 0;
         boolean validPosition = false;
 
         String data;
@@ -64,28 +64,33 @@ public class Main {
 
                 case 1 -> {
 
-                    System.out.println("Ingrese el elemento: ");
+                    if (count == mainArray.length) {
 
-                    data = in.next();
+                    } else {
 
-                    do {
-                        validPosition = false;
-                        System.out.println("Ingrese la posicion: ");
+                        System.out.println("Ingrese el elemento: ");
 
-                        pos = in.nextInt();
+                        data = in.next();
 
-                        try {
-                            methods.add(pos, data, mainArray);
-                            validPosition = true;
-                        } catch (Exception e) {
-                            System.out.println(e.getMessage());
+                        do {
+                            validPosition = false;
+                            System.out.println("Ingrese la posicion: ");
+
+                            pos = in.nextInt();
+
+                            try {
+                                methods.add(pos, data, mainArray);
+                                validPosition = true;
+                            } catch (Exception e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (!validPosition);
+
+                        System.out.println("El arreglo es el siguiente: ");
+
+                        for (int i = 0; i < mainArray.length; i++) {
+                            System.out.println(mainArray[i]);
                         }
-                    } while (!validPosition);
-
-                    System.out.println("El arreglo es el siguiente: ");
-
-                    for (int i = 0; i < mainArray.length; i++) {
-                        System.out.println(mainArray[i]);
                     }
 
                 }
