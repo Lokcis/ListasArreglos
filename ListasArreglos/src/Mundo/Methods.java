@@ -15,5 +15,15 @@ public class Methods {
         }
 
     }
+    
+    public void searchLastItem(String[] array){
+        
+        if (array[array.length] != null){
+            
+            //Poner throw de arreglo lleno.
+            
+        } 
+        
+    }
 
 }
