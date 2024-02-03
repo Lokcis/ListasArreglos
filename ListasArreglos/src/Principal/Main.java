@@ -13,18 +13,25 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        int opc, fin;
-        String[] mainArray, arrayOfArrays; 
+        int opc, fin = 0, tam;
+        String[] mainArray, arrayOfArrays;
 
         Scanner in = new Scanner(System.in);
-        
+
         System.out.println("Bienvenido!\n");
 
-        do {System.out.println("""                           
+        System.out.println("Ingresa el tamaño del primer arreglo: ");
+
+        tam = in.nextInt();
+
+        mainArray = new String[tam];
+
+        do {
+            System.out.println("""                           
                            Ingresa la accion que deseas realizar:
                            
-                           1. Agregar.
-                           2. Agregar en una posicion especifica.
+                           1. Agregar un elemento en una posicion especifica.
+                           2. Agregar un elemento a la lista.
                            3. Agregar todos los elementos a otro arreglo.
                            4. Elimina el elemento en la posicion indicada.
                            5. Elimina el primer elemento indicado.
@@ -42,11 +49,12 @@ public class Main {
                             
                            17. Salir.
                            """);
+
+            opc = in.nextInt();
+            
             switch (opc) {
 
                 case 1 -> {
-                    
-                    
 
                 }
 
@@ -54,8 +62,16 @@ public class Main {
 
                 }
 
+                case 17 -> {
+
+                    fin = 1;
+                    
+                }
+
                 default -> {
+                    
                     System.out.println("Opción incorrecta.");
+                    
                 }
             }
 
