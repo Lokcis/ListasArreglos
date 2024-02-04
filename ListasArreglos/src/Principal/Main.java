@@ -16,8 +16,8 @@ public class Main {
 
         Methods methods = new Methods();
 
-        int opc, fin = 0, tam, pos, count = 0;
-        boolean validPosition = false;
+        int opc, tam, pos, count = 0;
+        boolean validPosition = false, fin = true;
 
         String data;
         String[] mainArray, arrayOfArrays;
@@ -111,7 +111,7 @@ public class Main {
 
                 case 17 -> {
 
-                    fin = 1;
+                    fin = true;
 
                 }
 
@@ -122,7 +122,7 @@ public class Main {
                 }
             }
 
-        } while (fin == 0);
+        } while (fin == false);
 
     }
 }
