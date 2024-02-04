@@ -51,11 +51,22 @@ public class Methods {
 
     public void remove(String[] array, int pos) {
         array[pos] = null;
-        for (int i = pos; i < array.length-1; i++) {
-            if (array[i + 1] != null) {
-                array[i] = array[i + 1];
+        for (int i = pos; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        array[array.length - 1] = null;
+    }
+
+    public void remove(String[] array, String ele) {
+        for (int i = 0; i < array.length; i++) {
+            if (ele.equals(array[i])) {
+                array[i] = null;
+                for (int j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array[array.length - 1] = null;
+                break;
             }
-        } 
-        array[array.length-1]= null;
+        }
     }
 }
