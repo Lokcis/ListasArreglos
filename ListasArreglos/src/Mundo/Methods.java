@@ -55,7 +55,7 @@ public class Methods {
             if (array[i + 1] != null) {
                 array[i] = array[i + 1];
             }
-        }
-        
+        } 
+        array[array.length-1]= null;
     }
 }
