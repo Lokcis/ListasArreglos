@@ -108,9 +108,9 @@ public class Main {
                     }
 
                 }
-
+                
                 case 3 -> {
-                    System.out.println("Ingrese el tamaño del nuevo arreglo: ");
+                    System.out.println("Ingrese el tamanio del nuevo arreglo: ");
                     size = in.nextInt();
                     secondArray = new String[size];
                     methods.add(mainArray, secondArray);
@@ -118,6 +118,15 @@ public class Main {
                     for (String element : secondArray) {
                         System.out.println(element);
                     }
+                }
+                
+                case 4 ->{
+                    System.out.println("Escoge la posicion que deseas eliminar: ");
+                    pos = in.nextInt();
+                    methods.remove(mainArray, pos);
+                    for (int i = 0; i < mainArray.length; i++) {
+                        System.out.println(mainArray[i]);
+                    }                    
                 }
 
                 case 17 -> {
