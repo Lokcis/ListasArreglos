@@ -49,11 +49,11 @@ public class Main {
                            11. Retorna el numero de elementos.
                            12. Retorna la ultima ubicacion del elemento.
                            13. Retorna los elementos entre los valores indicados.
-                           14. Verificar el elemento en la posicion indicada.
-                           15. Verificar si el arreglo esta vacio.
-                           16. Verificar si el elemento se encuentra en el arreglo.
-                            
-                           17. Salir.
+                           14. Retornar el elemento de la posicon indicada.    
+                           15. Verificar el elemento en la posicion indicada.
+                           16. Verificar si el arreglo esta vacio.
+                           17. Verificar si el elemento se encuentra en el arreglo.                          
+                           18. Salir.
                            
                            """);
 
@@ -146,6 +146,31 @@ public class Main {
                         for (int i = 0; i < mainArray.length; i++) {
                             System.out.println(mainArray[i]);
                         }
+                    } catch (IllegalArgumentException e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+                case 8 -> {
+                    System.out.println("Ingrese el nuevo tamaño del arreglo: ");
+                    int newSize = in.nextInt();
+
+                    try {
+                        mainArray = methods.resize(mainArray, newSize);
+                        System.out.println("Arreglo redimensionado:");
+                        for (int i = 0; i < mainArray.length; i++) {
+                            System.out.println(mainArray[i]);
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+                case 10 -> {
+                    try {
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.println("Por favor, ingresa la posición del elemento que quieres ver:");
+                        int position = scanner.nextInt();
+                        String element = methods.ElementsAndPositions(mainArray, position);
+                        System.out.println("Posición: " + position + ", Elemento: " + element);
                     } catch (IllegalArgumentException e) {
                         System.err.println("Error: " + e.getMessage());
                     }

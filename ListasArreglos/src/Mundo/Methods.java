@@ -103,4 +103,26 @@ public class Methods {
             array[i] = null;
         }
     }
+
+    public String[] resize(String[] array, int newSize) throws IllegalArgumentException {
+        if (newSize < 0) {
+            throw new IllegalArgumentException("El nuevo tamaño del arreglo no puede ser negativo.");
+        }
+        String[] newArray = new String[newSize];
+
+        int copyLength = Math.min(array.length, newSize);
+        System.arraycopy(array, 0, newArray, 0, copyLength);
+
+        return newArray;
+    }
+
+    public String ElementsAndPositions(String[] array, int position) {
+        if (array == null) {
+            throw new IllegalArgumentException("El arreglo no puede ser nulo.");
+        }
+        if (position < 0 || position >= array.length) {
+            throw new IllegalArgumentException("Posición inválida.");
+        }
+        return array[position];
+    }
 }
