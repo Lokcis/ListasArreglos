@@ -43,11 +43,19 @@ public class Methods {
     }
 
     public void add(String[] arrayM, String[] arrayS) {
-        // Copia los elementos del arreglo original al nuevo arreglo
         for (int i = 0; i < Math.min(arrayM.length, arrayS.length); i++) {
             arrayS[i] = arrayM[i];
         }
         System.out.println("Se han transferido los elementos al nuevo arreglo.");
     }
 
+    public void remove(String[] array, int pos) {
+        array[pos] = null;
+        for (int i = pos; i < array.length-1; i++) {
+            if (array[i + 1] != null) {
+                array[i] = array[i + 1];
+            }
+        }
+        
+    }
 }
