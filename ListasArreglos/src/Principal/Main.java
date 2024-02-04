@@ -17,9 +17,8 @@ public class Main {
         Methods methods = new Methods();
 
         int opc, size, pos, count = 0;
-        boolean validPosition = false, fin = false;
-
-        String data;
+        boolean validPosition, fin = false;
+        String data, ele;
         String[] mainArray, secondArray;
 
         Scanner in = new Scanner(System.in);
@@ -108,7 +107,7 @@ public class Main {
                     }
 
                 }
-                
+
                 case 3 -> {
                     System.out.println("Ingrese el tamanio del nuevo arreglo: ");
                     size = in.nextInt();
@@ -119,14 +118,23 @@ public class Main {
                         System.out.println(element);
                     }
                 }
-                
-                case 4 ->{
+
+                case 4 -> {
                     System.out.println("Escoge la posicion que deseas eliminar: ");
                     pos = in.nextInt();
                     methods.remove(mainArray, pos);
                     for (int i = 0; i < mainArray.length; i++) {
                         System.out.println(mainArray[i]);
-                    }                    
+                    }
+                }
+                
+                case 5 ->{
+                    System.out.println("Ingresa el elemento a eliminar.");
+                    ele = in.next();
+                    methods.remove(mainArray, ele);
+                    for (int i = 0; i < mainArray.length; i++) {
+                        System.out.println(mainArray[i]);
+                    }
                 }
 
                 case 17 -> {
