@@ -11,6 +11,12 @@ public class Methods {
         if (pos >= 0 && pos < array.length) {
 
             if (array[pos] != null) {
+                
+                for (int i = array.length-1; i < pos; i--) {
+                    
+                    array[i + 1] = array[i];
+                    
+                }
 
                 array[pos] = ele;
 
