@@ -16,11 +16,11 @@ public class Main {
 
         Methods methods = new Methods();
 
-        int opc, tam, pos, count = 0;
-        boolean validPosition = false, fin = true;
+        int opc, size, pos, count = 0;
+        boolean validPosition, fin = true;
 
         String data;
-        String[] mainArray, arrayOfArrays;
+        String[] mainArray, secondArray;
 
         Scanner in = new Scanner(System.in);
 
@@ -28,9 +28,9 @@ public class Main {
 
         System.out.println("Ingresa el tamanio del primer arreglo: ");
 
-        tam = in.nextInt();
+        size = in.nextInt();
 
-        mainArray = new String[tam];
+        mainArray = new String[size];
 
         do {
             System.out.println("""  
@@ -107,6 +107,13 @@ public class Main {
                         System.out.println(e.getMessage());
                     }
 
+                }
+
+                case 3 -> {
+                    System.out.println("Ingrese el tamanio del nuevo arreglo");
+                    size = in.nextInt();                    
+                    secondArray = new String[size];
+                    methods.add(mainArray, secondArray);
                 }
 
                 case 17 -> {
