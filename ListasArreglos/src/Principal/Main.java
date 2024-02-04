@@ -136,6 +136,12 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
+                
+                case 6 ->{
+                    
+                    
+                    
+                }
 
                 case 17 -> {
 
