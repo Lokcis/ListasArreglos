@@ -65,12 +65,13 @@ public class Main {
                 case 1 -> {
 
                     if (count == mainArray.length) {
-
+                        System.out.println("El arreglo esta lleno. ");
                     } else {
 
                         System.out.println("Ingrese el elemento: ");
 
                         data = in.next();
+                        count++;
 
                         do {
                             validPosition = false;
@@ -96,6 +97,20 @@ public class Main {
                 }
 
                 case 2 -> {
+
+                    System.out.println("Ingrese el elemento: ");
+
+                    data = in.next();
+
+                    try {
+                        methods.add(data, mainArray);
+                        System.out.println("El arreglo es el siguiente: ");
+                        for (int i = 0; i < mainArray.length; i++) {
+                            System.out.println(mainArray[i]);
+                        }
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
 
                 }
 
