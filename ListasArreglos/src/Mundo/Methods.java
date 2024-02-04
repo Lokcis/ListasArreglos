@@ -41,5 +41,21 @@ public class Methods {
         }
 
     }
+    
+    public void add(String[] arrayM, String[] arrayS){        
+        for (int i = 0; i < arrayS.length; i++) {            
+            if (arrayS[i] != null) {                
+                i++;                
+            }else{
+                int k=0;
+                for (int j = i; j < arrayS.length; j++) {                    
+                    arrayS[i] = arrayM[k];
+                    k++;
+                }
+            }
+            
+        }
+        
+    }
 
 }
