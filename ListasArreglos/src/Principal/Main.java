@@ -166,6 +166,31 @@ public class Main {
                 }
                 case 10 -> {
                     try {
+                        System.out.println("Ingrese el elemento para encontrar la primera ocurrencia: ");
+                        String elementToFind = in.next();
+
+                        System.out.println(methods.FirstOcc(elementToFind, mainArray));
+                    } catch (Exception e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+
+                case 11 -> {
+                    int elementCount = methods.elements(mainArray);
+                    System.out.println("Número de elementos en el arreglo: " + elementCount);
+                }
+                case 12 -> {
+                    try {
+                        System.out.println("Ingrese el elemento para encontrar la última ocurrencia: ");
+                        String elementToFind = in.next();
+
+                        System.out.println(methods.LastOcc(elementToFind, mainArray));
+                    } catch (Exception e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+                case 14 -> {
+                    try {
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa la posición del elemento que quieres ver:");
                         int position = scanner.nextInt();
@@ -188,7 +213,8 @@ public class Main {
                 }
             }
 
-        } while (fin == false);
+        } while (fin
+                == false);
 
     }
 }

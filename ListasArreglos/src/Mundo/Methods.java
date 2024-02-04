@@ -116,6 +116,32 @@ public class Methods {
         return newArray;
     }
 
+    public String FirstOcc(String element, String[] array) {
+        if (element == null || array == null) {
+            return "Error: Los parámetros no pueden ser nulos.";
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            if (element.equals(array[i])) {
+                return "La primera ocurrencia de '" + element + "' se encuentra en la posición " + i;
+            }
+        }
+        return "No se encontró ninguna ocurrencia de '" + element + "'";
+    }
+
+    public String LastOcc(String element, String[] array) {
+        if (element == null || array == null) {
+            return "Error: Los parámetros no pueden ser nulos.";
+        }
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            if (element.equals(array[i])) {
+                return "La última ocurrencia de '" + element + "' se encuentra en la posición " + i;
+            }
+        }
+        return "No se encontró ninguna ocurrencia de '" + element + "'";
+    }
+
     public String ElementsAndPositions(String[] array, int position) {
         if (array == null) {
             throw new IllegalArgumentException("El arreglo no puede ser nulo.");
@@ -124,5 +150,16 @@ public class Methods {
             throw new IllegalArgumentException("Posición inválida.");
         }
         return array[position];
+    }
+
+    public int elements(String[] array) {
+        int count = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                count++;
+            }
+        }
+        return count;
     }
 }
