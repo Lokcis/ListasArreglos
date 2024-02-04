@@ -46,7 +46,6 @@ public class Methods {
         for (int i = 0; i < Math.min(arrayM.length, arrayS.length); i++) {
             arrayS[i] = arrayM[i];
         }
-        System.out.println("Se han transferido los elementos al nuevo arreglo.");
     }
 
     public void remove(String[] array, int pos) {
@@ -87,5 +86,21 @@ public class Methods {
             }
         }
         return newArray;
+    }
+
+    public void clear(String[] array) throws IllegalArgumentException {
+        boolean Nulls = true;
+        for (Object obj : array) {
+            if (obj != null) {
+                Nulls = false;
+                break;
+            }
+        }
+        if (Nulls) {
+            throw new IllegalArgumentException("El arreglo no puede estar vacio. Agregue elementos antes de. ");
+        }
+        for (int i = 0; i < array.length; i++) {
+            array[i] = null;
+        }
     }
 }

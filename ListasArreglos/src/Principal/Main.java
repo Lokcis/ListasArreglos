@@ -140,7 +140,16 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
-
+                case 7 -> {
+                    try {
+                        methods.clear(mainArray);
+                        for (int i = 0; i < mainArray.length; i++) {
+                            System.out.println(mainArray[i]);
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
                 case 17 -> {
 
                     fin = true;
