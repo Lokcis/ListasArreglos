@@ -43,16 +43,11 @@ public class Methods {
     }
 
     public void add(String[] arrayM, String[] arrayS) {
-        
-        if (arrayS.length >= arrayM.length) {
-            
-            for (int i = 0; i < arrayM.length; i++) {
-                arrayS[i] = arrayM[i];
-            }
-            System.out.println("Se han transferido los elementos al nuevo arreglo.");
-        } else {
-            System.out.println("El nuevo arreglo es demasiado pequeño para contener todos los elementos del arreglo original.");
+        // Copia los elementos del arreglo original al nuevo arreglo
+        for (int i = 0; i < Math.min(arrayM.length, arrayS.length); i++) {
+            arrayS[i] = arrayM[i];
         }
+        System.out.println("Se han transferido los elementos al nuevo arreglo.");
     }
 
 }
