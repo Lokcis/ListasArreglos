@@ -26,7 +26,7 @@ public class Main {
 
         System.out.println("Bienvenido!\n");
 
-        System.out.println("Ingresa el tamaño del primer arreglo: ");
+        System.out.println("Ingresa el tamanio del primer arreglo: ");
 
         tam = in.nextInt();
 
@@ -64,34 +64,29 @@ public class Main {
 
                 case 1 -> {
 
-                    if (count == mainArray.length) {
-                        System.out.println("El arreglo esta lleno. ");
-                    } else {
+                    System.out.println("Ingrese el elemento: ");
 
-                        System.out.println("Ingrese el elemento: ");
+                    data = in.next();
+                    count++;
 
-                        data = in.next();
-                        count++;
+                    do {
+                        validPosition = false;
+                        System.out.println("Ingrese la posicion: ");
 
-                        do {
-                            validPosition = false;
-                            System.out.println("Ingrese la posicion: ");
+                        pos = in.nextInt();
 
-                            pos = in.nextInt();
-
-                            try {
-                                methods.add(pos, data, mainArray);
-                                validPosition = true;
-                            } catch (Exception e) {
-                                System.out.println(e.getMessage());
-                            }
-                        } while (!validPosition);
-
-                        System.out.println("El arreglo es el siguiente: ");
-
-                        for (int i = 0; i < mainArray.length; i++) {
-                            System.out.println(mainArray[i]);
+                        try {
+                            methods.add(pos, data, mainArray);
+                            validPosition = true;
+                        } catch (Exception e) {
+                            System.out.println(e.getMessage());
                         }
+                    } while (!validPosition);
+
+                    System.out.println("El arreglo es el siguiente: ");
+
+                    for (int i = 0; i < mainArray.length; i++) {
+                        System.out.println(mainArray[i]);
                     }
 
                 }
