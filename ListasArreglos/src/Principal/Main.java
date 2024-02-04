@@ -17,7 +17,7 @@ public class Main {
         Methods methods = new Methods();
 
         int opc, size, pos, count = 0;
-        boolean validPosition, fin = true;
+        boolean validPosition = false, fin = false;
 
         String data;
         String[] mainArray, secondArray;
@@ -110,10 +110,14 @@ public class Main {
                 }
 
                 case 3 -> {
-                    System.out.println("Ingrese el tamanio del nuevo arreglo");
-                    size = in.nextInt();                    
+                    System.out.println("Ingrese el tamaño del nuevo arreglo: ");
+                    size = in.nextInt();
                     secondArray = new String[size];
                     methods.add(mainArray, secondArray);
+                    System.out.println("El nuevo arreglo es el siguiente: ");
+                    for (String element : secondArray) {
+                        System.out.println(element);
+                    }
                 }
 
                 case 17 -> {

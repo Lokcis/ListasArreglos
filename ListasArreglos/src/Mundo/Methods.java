@@ -10,9 +10,9 @@ public class Methods {
 
         if (pos >= 0 && pos < array.length) {
 
-            if (array[pos] != null) {                
-                for (int i = array.length-1; i > pos; i--) {                    
-                    array[i] = array[i - 1];                    
+            if (array[pos] != null) {
+                for (int i = array.length - 1; i > pos; i--) {
+                    array[i] = array[i - 1];
                 }
                 array[pos] = ele;
             } else {
@@ -41,21 +41,18 @@ public class Methods {
         }
 
     }
-    
-    public void add(String[] arrayM, String[] arrayS){        
-        for (int i = 0; i < arrayS.length; i++) {            
-            if (arrayS[i] != null) {                
-                i++;                
-            }else{
-                int k=0;
-                for (int j = i; j < arrayS.length; j++) {                    
-                    arrayS[i] = arrayM[k];
-                    k++;
-                }
-            }
-            
-        }
+
+    public void add(String[] arrayM, String[] arrayS) {
         
+        if (arrayS.length >= arrayM.length) {
+            
+            for (int i = 0; i < arrayM.length; i++) {
+                arrayS[i] = arrayM[i];
+            }
+            System.out.println("Se han transferido los elementos al nuevo arreglo.");
+        } else {
+            System.out.println("El nuevo arreglo es demasiado pequeño para contener todos los elementos del arreglo original.");
+        }
     }
 
 }
