@@ -69,4 +69,23 @@ public class Methods {
             }
         }
     }
+
+    public String[] remove(String[] array) {
+        int nullCount = 0;
+        for (String s : array) {
+            if (s == null) {
+                nullCount++;
+            }
+        }
+        String[] newArray = new String[array.length - nullCount];
+        int newIndex = 0;
+
+        for (String s : array) {
+            if (s != null) {
+                newArray[newIndex] = s;
+                newIndex++;
+            }
+        }
+        return newArray;
+    }
 }

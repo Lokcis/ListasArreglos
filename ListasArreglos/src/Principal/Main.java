@@ -87,9 +87,7 @@ public class Main {
                     for (int i = 0; i < mainArray.length; i++) {
                         System.out.println(mainArray[i]);
                     }
-
                 }
-
                 case 2 -> {
 
                     System.out.println("Ingrese el elemento: ");
@@ -105,9 +103,7 @@ public class Main {
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
-
                 }
-
                 case 3 -> {
                     System.out.println("Ingrese el tamanio del nuevo arreglo: ");
                     size = in.nextInt();
@@ -127,8 +123,8 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
-                
-                case 5 ->{
+
+                case 5 -> {
                     System.out.println("Ingresa el elemento a eliminar.");
                     ele = in.next();
                     methods.remove(mainArray, ele);
@@ -136,11 +132,13 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
-                
-                case 6 ->{
-                    
-                    
-                    
+
+                case 6 -> {
+                    mainArray = methods.remove(mainArray);
+                    System.out.println("El nuevo arreglo es: ");
+                    for (int i = 0; i < mainArray.length; i++) {
+                        System.out.println(mainArray[i]);
+                    }
                 }
 
                 case 17 -> {
