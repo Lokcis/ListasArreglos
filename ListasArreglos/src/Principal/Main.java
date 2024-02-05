@@ -44,16 +44,15 @@ public class Main {
                            6. Eliminar espacios vacios.
                            7. Eliminar todos los elementos del arreglo.
                            8. Modifica el tamanio del arreglo.
-                           9. Reemplaza el elemento de la posicion indicada con otro ingresado.
-                           10. Retornar la primera ubicacion del elemento.
-                           11. Retorna el numero de elementos.
-                           12. Retorna la ultima ubicacion del elemento.
-                           13. Retorna los elementos entre los valores indicados.
-                           14. Retornar el elemento de la posicon indicada.    
-                           15. Verificar el elemento en la posicion indicada.
-                           16. Verificar si el arreglo esta vacio.
-                           17. Verificar si el elemento se encuentra en el arreglo.                          
-                           18. Salir.
+                           9. Retornar la primera ubicacion del elemento.
+                           10. Retorna el numero de elementos.
+                           11. Retorna la ultima ubicacion del elemento.
+                           12. Retorna los elementos entre los valores indicados.
+                           13. Retornar el elemento de la posicon indicada.    
+                           14. Verificar el elemento en la posicion indicada.
+                           15. Verificar si el arreglo esta vacio.
+                           16. Verificar si el elemento se encuentra en el arreglo.                          
+                           17. Salir.
                            
                            """);
 
@@ -170,7 +169,7 @@ public class Main {
                     }
                 }
                 //Retornar la primera ubicacion del elemento.
-                case 10 -> {
+                case 9 -> {
                     try {
                         System.out.println("Ingrese el elemento para encontrar la primera ocurrencia: ");
                         String elementToFind = in.next();
@@ -181,12 +180,12 @@ public class Main {
                     }
                 }
                 //Retorna el numero de elementos.
-                case 11 -> {
+                case 10 -> {
                     int elementCount = methods.elements(mainArray);
                     System.out.println("Número de elementos en el arreglo: " + elementCount);
                 }
                 //Retorna la ultima ubicacion del elemento.
-                case 12 -> {
+                case 11 -> {
                     try {
                         System.out.println("Ingrese el elemento para encontrar la última ocurrencia: ");
                         String elementToFind = in.next();
@@ -197,7 +196,7 @@ public class Main {
                     }
                 }
                 //Retorna los elementos entre los valores indicados.
-                case 13 -> {
+                case 12 -> {
                     try {
                         System.out.println("Ingrese la posición de inicio para la sublista: ");
                         int start = in.nextInt();
@@ -220,7 +219,7 @@ public class Main {
                     }
                 }
                 //Retornar el elemento de la posicon indicada.  
-                case 14 -> {
+                case 13 -> {
                     try {
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa la posición del elemento que quieres ver:");
@@ -232,17 +231,17 @@ public class Main {
                     }
                 }
                 //Verificar si el arreglo esta vacio.
-                case 16 -> {
+                case 15 -> {
                     boolean isEmpty = methods.empty(mainArray);
 
                     if (isEmpty) {
-                        System.out.println("El arreglo está vacío.");
+                        System.out.println("El arreglo esta vacio.");
                     } else {
-                        System.out.println("El arreglo no está vacío.");
+                        System.out.println("El arreglo no esta vacio.");
                     }
                 }
                 //Verificar si el elemento se encuentra en el arreglo.  
-                case 17 -> {
+                case 16 -> {
                     try {
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa el elemento que quieres buscar:");
@@ -258,7 +257,7 @@ public class Main {
                     }
                 }
                 //Salir
-                case 18 -> {
+                case 17 -> {
 
                     fin = true;
                 }

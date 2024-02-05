@@ -137,10 +137,20 @@ public class Methods {
         for (int i = 0; i < array.length; i++) {
             if (array[i] != null) {
                 array[i] = null;
+            } else {
+                break;
             }
         }
     }
-    
+
+    /**
+     * Crea otro arreglo con las nuevas dimensiones
+     *
+     * @param array
+     * @param newSize Tamaño nuevo arreglo
+     * @return
+     * @throws IllegalArgumentException
+     */
     public String[] resize(String[] array, int newSize) throws IllegalArgumentException {
         if (newSize < 0) {
             throw new IllegalArgumentException("El nuevo tamaño del arreglo no puede ser negativo.");
@@ -201,15 +211,10 @@ public class Methods {
     }
 
     public boolean empty(String[] array) {
-        if (array == null || array.length == 0) {
+        if (array[0] == null) {
             return true;
         }
-        for (Object obj : array) {
-            if (obj != null) {
-                return false;
-            }
-        }
-        return true;
+        return false;
     }
 
     public String[] sublist(int start, int end, String[] array) throws Exception {
