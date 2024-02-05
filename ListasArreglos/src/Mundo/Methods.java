@@ -144,12 +144,13 @@ public class Methods {
     }
 
     /**
-     * Crea otro arreglo con las nuevas dimensiones
+     * Crea y devuelve un nuevo arreglo con las nuevas dimensiones
+     * especificadas.
      *
-     * @param array
-     * @param newSize Tamaño nuevo arreglo
-     * @return
-     * @throws IllegalArgumentException
+     * @param array Arreglo original del cual se creará el nuevo arreglo.
+     * @param newSize Tamaño nuevo del arreglo.
+     * @return Un nuevo arreglo con las dimensiones especificadas.
+     * @throws IllegalArgumentException Si el tamaño nuevo es menor que cero.
      */
     public String[] resize(String[] array, int newSize) throws IllegalArgumentException {
         if (newSize < 0) {
@@ -163,6 +164,14 @@ public class Methods {
         return newArray;
     }
 
+    /**
+     * Encuentra la primera ocurrencia de un elemento en el arreglo.
+     *
+     * @param element Elemento que se desea buscar.
+     * @param array Arreglo inicial en el cual se buscará la ocurrencia.
+     * @return Un mensaje indicando la posición de la primera ocurrencia o un
+     * mensaje de error.
+     */
     public String firstOcc(String element, String[] array) {
         if (element == null || array == null) {
             return "Error: Los parámetros no pueden ser nulos.";
@@ -176,6 +185,14 @@ public class Methods {
         return "No se encontró ninguna ocurrencia de '" + element + "'";
     }
 
+    /**
+     * Encuentra la ultima ocurrencia de un elemento en el arreglo.
+     *
+     * @param element Elemento que se desea buscar.
+     * @param array Arreglo inicial en el cual se buscará la ocurrencia.
+     * @return Un mensaje indicando la posición de la ultima ocurrencia o un
+     * mensaje de error.
+     */
     public String lastOcc(String element, String[] array) {
         if (element == null || array == null) {
             return "Error: Los parámetros no pueden ser nulos.";
@@ -189,6 +206,15 @@ public class Methods {
         return "No se encontró ninguna ocurrencia de '" + element + "'";
     }
 
+    /**
+     * Obtiene el elemento en la posición especificada del arreglo.
+     *
+     * @param array Arreglo inicia en el cual se desea obtener el elemento.
+     * @param position Posición del elemento que se desea obtener.
+     * @return El elemento en la posición especificada.
+     * @throws IllegalArgumentException Si el arreglo es nulo o la posición es
+     * inválida.
+     */
     public String elementsAndPositions(String[] array, int position) {
         if (array == null) {
             throw new IllegalArgumentException("El arreglo no puede ser nulo.");
@@ -199,6 +225,13 @@ public class Methods {
         return array[position];
     }
 
+    /**
+     * Obtiene la cantidad de elementos en el arrelgo
+     *
+     * @param array Arreglo inicia en el cual se desea saber la cantidad de
+     * elementos.
+     * @return La cantidad de elementos en el arreglo
+     */
     public int elements(String[] array) {
         int count = 0;
 
@@ -210,6 +243,13 @@ public class Methods {
         return count;
     }
 
+    /**
+     * Verifica si el arreglo está vacío (todos los elementos son nulos).
+     *
+     * @param array Arreglo que se desea verificar.
+     * @return true si el arreglo está vacío, false si contiene al menos un
+     * elemento no nulo.
+     */
     public boolean empty(String[] array) {
         if (array[0] == null) {
             return true;
@@ -217,29 +257,48 @@ public class Methods {
         return false;
     }
 
+    /**
+     * Crea y devuelve una sublista del arreglo original, desde la posición de
+     * inicio hasta la posición final inclusiva.
+     *
+     * @param start Índice de inicio de la sublista.
+     * @param end Índice final de la sublista.
+     * @param array Arreglo original del cual se creará la sublista.
+     * @return Una sublista del arreglo original.
+     * @throws Exception Si el arreglo está vacío, o los índices de sublista son
+     * inválidos.
+     */
     public String[] sublist(int start, int end, String[] array) throws Exception {
         boolean allNulls = true;
-        for (Object obj : array) {
-            if (obj != null) {
+
+        for (String str : array) {
+            if (str != null) {
                 allNulls = false;
                 break;
             }
         }
         if (allNulls) {
-            throw new Exception("Error: El arreglo esta vacio. Agrega elementos al arreglo antes de intentar crear una sublista.");
+            throw new Exception("Error: El arreglo está vacío. Agrega elementos al arreglo antes de intentar crear una sublista.");
         }
         if (start < 0 || end >= array.length || start > end) {
             throw new Exception("Error: Índices de sublista inválidos.");
         }
         int sublistSize = end - start + 1;
         String[] sublist = new String[sublistSize];
-
         for (int i = 0; i < sublistSize; i++) {
             sublist[i] = array[start + i];
         }
         return sublist;
     }
 
+    /**
+     * Verifica si un elemento específico existe en el arreglo.
+     *
+     * @param array Arreglo en el cual se buscará el elemento.
+     * @param element Elemento que se desea buscar.
+     * @return true si el elemento existe en el arreglo, false de lo contrario.
+     * @throws IllegalArgumentException Si el arreglo es nulo.
+     */
     public boolean exists(String[] array, String element) {
         if (array == null) {
             throw new IllegalArgumentException("El arreglo no puede ser nulo.");
