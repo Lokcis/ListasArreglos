@@ -85,13 +85,32 @@ public class Methods {
     }
 
     /**
-     * Elimina el elemento indicado
+     * Elimina el primer elemento indicado
      *
      * @param array
      * @param ele Elemento que se elimina
      */
     public void remove(String[] array, String ele) {
         for (int i = 0; i < array.length; i++) {
+            if (ele.equals(array[i])) {
+                array[i] = null;
+                for (int j = i; j < array.length - 1; j++) {
+                    array[j] = array[j + 1];
+                }
+                array[array.length - 1] = null;
+                break;
+            }
+        }
+    }
+
+    /**
+     * Se eliminar la primer ocurrencia el elemento ingresado.
+     *
+     * @param array
+     * @param ele Elemento a eliminar
+     */
+    public void invremove(String[] array, String ele) {
+        for (int i = array.length - 1; i > 0; i--) {
             if (ele.equals(array[i])) {
                 array[i] = null;
                 for (int j = i; j < array.length - 1; j++) {
