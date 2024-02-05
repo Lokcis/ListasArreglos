@@ -18,7 +18,7 @@ public class Main {
 
         int opc, size, pos, count = 0;
         boolean validPosition, fin = false;
-        String data, ele;
+        String data, ele, state;
         String[] mainArray, secondArray;
 
         Scanner in = new Scanner(System.in);
@@ -221,13 +221,25 @@ public class Main {
                 //Retornar el elemento de la posicon indicada.  
                 case 13 -> {
                     try {
-                        Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa la posición del elemento que quieres ver:");
-                        int position = scanner.nextInt();
-                        String element = methods.elementsAndPositions(mainArray, position);
-                        System.out.println("Posición: " + position + ", Elemento: " + element);
+                        pos = in.nextInt();
+                        String element = methods.elementsAndPositions(mainArray, pos);
+                        System.out.println("Posición: " + pos + ", Elemento: " + element);
                     } catch (IllegalArgumentException e) {
                         System.err.println("Error: " + e.getMessage());
+                    }
+                }
+                case 14 -> {
+                    System.out.println("Ingresa la posicion y el elemento: ");
+                    System.out.println("Posicion: ");
+                    pos = in.nextInt();
+                    System.out.println("Elemento: ");
+                    ele = in.next();
+                    state = methods.exist(mainArray, ele, pos);
+                    if (state == "Existe") {
+                        System.out.println("El elemento existe.");
+                    }else{
+                        System.out.println("No existe el elemento.");
                     }
                 }
                 //Verificar si el arreglo esta vacio.

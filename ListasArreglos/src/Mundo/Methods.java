@@ -310,4 +310,19 @@ public class Methods {
         }
         return false;
     }
+
+    /**
+     * Se verifica que el elemento se encuentre en el lugar indicado.
+     *
+     * @param array
+     * @param ele Elemento que sera comprobado.
+     * @param pos Posicion del elemento.
+     * @return    Retorna verdadero si existe en el lugar indicado.
+     */
+    public String exist(String[] array, String ele, int pos) {
+        if (array[pos].equals(ele)) {
+            return "Existe";
+        }
+        return "No existe";
+    }
 }
