@@ -6,6 +6,15 @@ package Mundo;
  */
 public class Methods {
 
+    /**
+     * Añade un elemento al arreglo principal en la posicion indicada por el
+     * usuario
+     *
+     * @param pos Posicion ingresada por el usuario
+     * @param ele Elemento ingresado por el usuario
+     * @param array
+     * @throws Exception
+     */
     public void add(int pos, String ele, String[] array) throws Exception {
 
         if (pos >= 0 && pos < array.length) {
@@ -28,6 +37,13 @@ public class Methods {
         }
     }
 
+    /**
+     * Añade un elemento al final de la lista
+     *
+     * @param ele Elemento que se añade
+     * @param array
+     * @throws Exception
+     */
     public void add(String ele, String[] array) throws Exception {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
@@ -42,12 +58,24 @@ public class Methods {
 
     }
 
+    /**
+     * Añade los elementos del arreglo principal al arreglo secundario
+     *
+     * @param arrayM Arreglo principal
+     * @param arrayS Arreglo al cual se le añaden elementos
+     */
     public void add(String[] arrayM, String[] arrayS) {
         for (int i = 0; i < Math.min(arrayM.length, arrayS.length); i++) {
             arrayS[i] = arrayM[i];
         }
     }
 
+    /**
+     * Elimina el elemento en la ubicacion indicada
+     *
+     * @param array Arreglo principal
+     * @param pos Posicion del elemento que se elimina
+     */
     public void remove(String[] array, int pos) {
         array[pos] = null;
         for (int i = pos; i < array.length - 1; i++) {
@@ -56,6 +84,12 @@ public class Methods {
         array[array.length - 1] = null;
     }
 
+    /**
+     * Elimina el elemento indicado
+     *
+     * @param array
+     * @param ele Elemento que se elimina
+     */
     public void remove(String[] array, String ele) {
         for (int i = 0; i < array.length; i++) {
             if (ele.equals(array[i])) {
@@ -69,6 +103,12 @@ public class Methods {
         }
     }
 
+    /**
+     * Elimina los espacios vacios
+     *
+     * @param array
+     * @return
+     */
     public String[] remove(String[] array) {
         int nullCount = 0;
         for (String s : array) {
@@ -88,22 +128,19 @@ public class Methods {
         return newArray;
     }
 
-    public void clear(String[] array) throws IllegalArgumentException {
-        boolean Nulls = true;
-        for (Object obj : array) {
-            if (obj != null) {
-                Nulls = false;
-                break;
+    /**
+     * Elimina todos los elementos vacios
+     *
+     * @param array
+     */
+    public void clear(String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null) {
+                array[i] = null;
             }
         }
-        if (Nulls) {
-            throw new IllegalArgumentException("El arreglo no puede estar vacio. Agregue elementos antes de. ");
-        }
-        for (int i = 0; i < array.length; i++) {
-            array[i] = null;
-        }
     }
-
+    
     public String[] resize(String[] array, int newSize) throws IllegalArgumentException {
         if (newSize < 0) {
             throw new IllegalArgumentException("El nuevo tamaño del arreglo no puede ser negativo.");
@@ -116,7 +153,7 @@ public class Methods {
         return newArray;
     }
 
-    public String FirstOcc(String element, String[] array) {
+    public String firstOcc(String element, String[] array) {
         if (element == null || array == null) {
             return "Error: Los parámetros no pueden ser nulos.";
         }
@@ -129,7 +166,7 @@ public class Methods {
         return "No se encontró ninguna ocurrencia de '" + element + "'";
     }
 
-    public String LastOcc(String element, String[] array) {
+    public String lastOcc(String element, String[] array) {
         if (element == null || array == null) {
             return "Error: Los parámetros no pueden ser nulos.";
         }
@@ -142,7 +179,7 @@ public class Methods {
         return "No se encontró ninguna ocurrencia de '" + element + "'";
     }
 
-    public String ElementsAndPositions(String[] array, int position) {
+    public String elementsAndPositions(String[] array, int position) {
         if (array == null) {
             throw new IllegalArgumentException("El arreglo no puede ser nulo.");
         }
@@ -175,7 +212,7 @@ public class Methods {
         return true;
     }
 
-    public String[] Sublist(int start, int end, String[] array) throws Exception {
+    public String[] sublist(int start, int end, String[] array) throws Exception {
         boolean allNulls = true;
         for (Object obj : array) {
             if (obj != null) {
@@ -198,7 +235,7 @@ public class Methods {
         return sublist;
     }
 
-    public boolean Exists (String[] array, String element) {
+    public boolean exists(String[] array, String element) {
         if (array == null) {
             throw new IllegalArgumentException("El arreglo no puede ser nulo.");
         }

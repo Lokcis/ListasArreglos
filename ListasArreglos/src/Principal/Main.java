@@ -61,6 +61,7 @@ public class Main {
 
             switch (opc) {
 
+                //Agregar un elemento en una posicion especifica.
                 case 1 -> {
 
                     System.out.println("Ingrese el elemento: ");
@@ -88,6 +89,7 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
+                //Agregar un elemento a la lista.
                 case 2 -> {
 
                     System.out.println("Ingrese el elemento: ");
@@ -104,6 +106,7 @@ public class Main {
                         System.out.println(e.getMessage());
                     }
                 }
+                //Agregar todos los elementos a otro arreglo.
                 case 3 -> {
                     System.out.println("Ingrese el tamanio del nuevo arreglo: ");
                     size = in.nextInt();
@@ -114,7 +117,7 @@ public class Main {
                         System.out.println(element);
                     }
                 }
-
+                //Elimina el elemento en la posicion indicada.
                 case 4 -> {
                     System.out.println("Escoge la posicion que deseas eliminar: ");
                     pos = in.nextInt();
@@ -123,7 +126,7 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
-
+                //Elimina el primer elemento indicado.
                 case 5 -> {
                     System.out.println("Ingresa el elemento a eliminar.");
                     ele = in.next();
@@ -132,7 +135,7 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
-
+                //Eliminar espacios vacios.
                 case 6 -> {
                     mainArray = methods.remove(mainArray);
                     System.out.println("El nuevo arreglo es: ");
@@ -140,6 +143,7 @@ public class Main {
                         System.out.println(mainArray[i]);
                     }
                 }
+                //Eliminar todos los elementos del arreglo.
                 case 7 -> {
                     try {
                         methods.clear(mainArray);
@@ -150,6 +154,7 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Modifica el tamanio del arreglo.
                 case 8 -> {
                     System.out.println("Ingrese el nuevo tamaño del arreglo: ");
                     int newSize = in.nextInt();
@@ -164,31 +169,34 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Retornar la primera ubicacion del elemento.
                 case 10 -> {
                     try {
                         System.out.println("Ingrese el elemento para encontrar la primera ocurrencia: ");
                         String elementToFind = in.next();
 
-                        System.out.println(methods.FirstOcc(elementToFind, mainArray));
+                        System.out.println(methods.firstOcc(elementToFind, mainArray));
                     } catch (Exception e) {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
-
+                //Retorna el numero de elementos.
                 case 11 -> {
                     int elementCount = methods.elements(mainArray);
                     System.out.println("Número de elementos en el arreglo: " + elementCount);
                 }
+                //Retorna la ultima ubicacion del elemento.
                 case 12 -> {
                     try {
                         System.out.println("Ingrese el elemento para encontrar la última ocurrencia: ");
                         String elementToFind = in.next();
 
-                        System.out.println(methods.LastOcc(elementToFind, mainArray));
+                        System.out.println(methods.lastOcc(elementToFind, mainArray));
                     } catch (Exception e) {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Retorna los elementos entre los valores indicados.
                 case 13 -> {
                     try {
                         System.out.println("Ingrese la posición de inicio para la sublista: ");
@@ -197,7 +205,7 @@ public class Main {
                         System.out.println("Ingrese la posición de fin para la sublista: ");
                         int end = in.nextInt();
 
-                        String[] sublist = methods.Sublist(start, end, mainArray);
+                        String[] sublist = methods.sublist(start, end, mainArray);
 
                         System.out.print("Sublista creada: [");
                         for (int i = 0; i < sublist.length; i++) {
@@ -211,17 +219,19 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Retornar el elemento de la posicon indicada.  
                 case 14 -> {
                     try {
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa la posición del elemento que quieres ver:");
                         int position = scanner.nextInt();
-                        String element = methods.ElementsAndPositions(mainArray, position);
+                        String element = methods.elementsAndPositions(mainArray, position);
                         System.out.println("Posición: " + position + ", Elemento: " + element);
                     } catch (IllegalArgumentException e) {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Verificar si el arreglo esta vacio.
                 case 16 -> {
                     boolean isEmpty = methods.empty(mainArray);
 
@@ -231,12 +241,13 @@ public class Main {
                         System.out.println("El arreglo no está vacío.");
                     }
                 }
+                //Verificar si el elemento se encuentra en el arreglo.  
                 case 17 -> {
                     try {
                         Scanner scanner = new Scanner(System.in);
                         System.out.println("Por favor, ingresa el elemento que quieres buscar:");
                         String element = scanner.nextLine();
-                        boolean contains = methods.Exists(mainArray, element);
+                        boolean contains = methods.exists(mainArray, element);
                         if (contains) {
                             System.out.println("El elemento '" + element + "' está en el arreglo.");
                         } else {
@@ -246,6 +257,7 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                //Salir
                 case 18 -> {
 
                     fin = true;
