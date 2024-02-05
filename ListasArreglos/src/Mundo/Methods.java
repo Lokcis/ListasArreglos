@@ -162,4 +162,51 @@ public class Methods {
         }
         return count;
     }
+
+    public boolean empty(String[] array) {
+        if (array == null || array.length == 0) {
+            return true;
+        }
+        for (Object obj : array) {
+            if (obj != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String[] Sublist(int start, int end, String[] array) throws Exception {
+        boolean allNulls = true;
+        for (Object obj : array) {
+            if (obj != null) {
+                allNulls = false;
+                break;
+            }
+        }
+        if (allNulls) {
+            throw new Exception("Error: El arreglo esta vacio. Agrega elementos al arreglo antes de intentar crear una sublista.");
+        }
+        if (start < 0 || end >= array.length || start > end) {
+            throw new Exception("Error: Índices de sublista inválidos.");
+        }
+        int sublistSize = end - start + 1;
+        String[] sublist = new String[sublistSize];
+
+        for (int i = 0; i < sublistSize; i++) {
+            sublist[i] = array[start + i];
+        }
+        return sublist;
+    }
+
+    public boolean Exists (String[] array, String element) {
+        if (array == null) {
+            throw new IllegalArgumentException("El arreglo no puede ser nulo.");
+        }
+        for (String s : array) {
+            if (s != null && s.equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

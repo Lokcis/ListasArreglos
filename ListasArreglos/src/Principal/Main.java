@@ -189,6 +189,28 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                case 13 -> {
+                    try {
+                        System.out.println("Ingrese la posición de inicio para la sublista: ");
+                        int start = in.nextInt();
+
+                        System.out.println("Ingrese la posición de fin para la sublista: ");
+                        int end = in.nextInt();
+
+                        String[] sublist = methods.Sublist(start, end, mainArray);
+
+                        System.out.print("Sublista creada: [");
+                        for (int i = 0; i < sublist.length; i++) {
+                            System.out.print(sublist[i]);
+                            if (i < sublist.length - 1) {
+                                System.out.print(", ");
+                            }
+                        }
+                        System.out.println("]");
+                    } catch (Exception e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
                 case 14 -> {
                     try {
                         Scanner scanner = new Scanner(System.in);
@@ -200,12 +222,34 @@ public class Main {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
+                case 16 -> {
+                    boolean isEmpty = methods.empty(mainArray);
+
+                    if (isEmpty) {
+                        System.out.println("El arreglo está vacío.");
+                    } else {
+                        System.out.println("El arreglo no está vacío.");
+                    }
+                }
                 case 17 -> {
+                    try {
+                        Scanner scanner = new Scanner(System.in);
+                        System.out.println("Por favor, ingresa el elemento que quieres buscar:");
+                        String element = scanner.nextLine();
+                        boolean contains = methods.Exists(mainArray, element);
+                        if (contains) {
+                            System.out.println("El elemento '" + element + "' está en el arreglo.");
+                        } else {
+                            System.out.println("El elemento '" + element + "' no está en el arreglo.");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.err.println("Error: " + e.getMessage());
+                    }
+                }
+                case 18 -> {
 
                     fin = true;
-
                 }
-
                 default -> {
 
                     System.out.println("Opción incorrecta.");
