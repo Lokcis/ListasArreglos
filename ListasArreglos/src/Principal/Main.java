@@ -249,9 +249,9 @@ public class Main {
                         ele = in.next();
                         state = methods.exist(mainArray, ele, pos);
                         if (state.equals("Existe")) {
-                            System.out.println("El elemento existe.");
+                            System.out.println("Coincide el elemento.");
                         } else {
-                            System.out.println("No existe el elemento.");
+                            System.out.println("No coincide el elemento.");
                         }
                     } catch (IllegalArgumentException e) {
                         System.out.println("Error: " + e.getMessage());
