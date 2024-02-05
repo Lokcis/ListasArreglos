@@ -230,16 +230,20 @@ public class Main {
                     }
                 }
                 case 14 -> {
-                    System.out.println("Ingresa la posicion y el elemento: ");
-                    System.out.println("Posicion: ");
-                    pos = in.nextInt();
-                    System.out.println("Elemento: ");
-                    ele = in.next();
-                    state = methods.exist(mainArray, ele, pos);
-                    if (state == "Existe") {
-                        System.out.println("El elemento existe.");
-                    }else{
-                        System.out.println("No existe el elemento.");
+                    try {
+                        System.out.println("Ingresa la posicion y el elemento: ");
+                        System.out.println("Posicion: ");
+                        pos = in.nextInt();
+                        System.out.println("Elemento: ");
+                        ele = in.next();
+                        state = methods.exist(mainArray, ele, pos);
+                        if (state.equals("Existe")) {
+                            System.out.println("El elemento existe.");
+                        } else {
+                            System.out.println("No existe el elemento.");
+                        }
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Error: " + e.getMessage());
                     }
                 }
                 //Verificar si el arreglo esta vacio.

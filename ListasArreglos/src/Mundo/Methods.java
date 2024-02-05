@@ -317,12 +317,21 @@ public class Methods {
      * @param array
      * @param ele Elemento que sera comprobado.
      * @param pos Posicion del elemento.
-     * @return    Retorna verdadero si existe en el lugar indicado.
+     * @return Retorna verdadero si existe en el lugar indicado.
+     * @throws IllegalArgumentException Si el elemento existe o no.
      */
     public String exist(String[] array, String ele, int pos) {
-        if (array[pos].equals(ele)) {
-            return "Existe";
+        try {
+            if (array != null && pos >= 0 && pos < array.length && ele != null) {
+                if (array[pos].equals(ele)) {
+                    return "Existe";
+                }
+                return "No existe";
+            } else {
+                throw new IllegalArgumentException("Parámetros inválidos.");
+            }
+        } catch (Exception e) {
+            return "Error: " + e.getMessage();
         }
-        return "No existe";
     }
 }
