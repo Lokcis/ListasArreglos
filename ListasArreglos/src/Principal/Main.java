@@ -24,7 +24,7 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
         System.out.println("Bienvenido!\n");
-
+        
         System.out.println("Ingresa el tamanio del primer arreglo: ");
 
         size = in.nextInt();
@@ -56,7 +56,7 @@ public class Main {
                            18. Salir.
                            
                            """);
-
+            
             opc = in.nextInt();
 
             switch (opc) {
@@ -289,14 +289,9 @@ public class Main {
                     fin = true;
                 }
                 default -> {
-
                     System.out.println("Opción incorrecta.");
-
                 }
             }
-
-        } while (fin
-                == false);
-
+        } while (fin== false);
     }
 }

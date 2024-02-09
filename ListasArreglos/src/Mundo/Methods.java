@@ -177,9 +177,15 @@ public class Methods {
         }
         String[] newArray = new String[newSize];
 
-        int copyLength = Math.min(array.length, newSize);
-        System.arraycopy(array, 0, newArray, 0, copyLength);
-
+        int copyLength;
+        if (array.length < newSize) {
+            copyLength = array.length;
+        }else{
+            copyLength = newSize;
+        }
+        for (int i = 0; i < copyLength; i++) {
+            newArray[i]=array[i];
+        }
         return newArray;
     }
 
@@ -270,10 +276,7 @@ public class Methods {
      * elemento no nulo.
      */
     public boolean empty(String[] array) {
-        if (array[0] == null) {
-            return true;
-        }
-        return false;
+        return array[0] == null;
     }
 
     /**
